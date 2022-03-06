@@ -8,6 +8,7 @@ import (
 	"math"
 	"math/rand"
 	"net"
+	"runtime"
 	"strconv"
 	"sync"
 	"time"
@@ -178,4 +179,6 @@ func main() {
 	time.Sleep(500 * time.Millisecond)
 	go clientGo(1)
 	wg.Wait()
+	runtime.Gosched()
+	runtime.Goexit()
 }

@@ -56,11 +56,33 @@ func init() {
 	}
 }
 
+// rubbish:
+//func getPersonHandler() PersonHandlerImpl {
+//	return PersonHandlerImpl{}
+//}
+//
+//func fetchPerson(origs chan<- Person) {
+//	for i := 0; i < len(persons); i++ {
+//		origs <- persons[i]
+//	}
+//	close(origs)
+//	persons = persons[:0]
+//}
+//
+//func savePerson(dests <-chan Person) <-chan int {
+//	sign := make(chan int, 1)
+//	for p := range dests {
+//		persons = append(persons, p)
+//	}
+//	sign <- 1
+//	return sign
+//}
+
 func main() {
 	handler := getPersonHandler()
 	origs := make(chan Person, 100)
 	dests := handler.Batch(origs)
-	fecthPerson(origs)
+	fetchPerson(origs)
 	sign := savePerson(dests)
 	<-sign
 }
@@ -85,7 +107,8 @@ func savePerson(dest <-chan Person) <-chan byte {
 	return sign
 }
 
-func fecthPerson(origs chan<- Person) {
+// initGoTicket 利用中间chan 控制并发量 buffered/2
+func fetchPerson(origs chan<- Person) {
 	origsCap := cap(origs)
 	buffered := origsCap > 0
 	goTicketTotal := origsCap / 2
@@ -117,6 +140,7 @@ func fecthPerson(origs chan<- Person) {
 	}()
 }
 
+// initGoTicket 返回一个 含有 total 个元素的 chan byte
 func initGoTicket(total int) chan byte {
 	var goTicket chan byte
 	if total == 0 {
@@ -129,6 +153,7 @@ func initGoTicket(total int) chan byte {
 	return goTicket
 }
 
+// 从中persons 取出一个元素
 func fecthPerson1() (Person, bool) {
 	if personCount < personTotal {
 		p := persons[personCount]
