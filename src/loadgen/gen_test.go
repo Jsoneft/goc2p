@@ -1,8 +1,9 @@
 package loadgen
 
 import (
-	loadgenlib "loadgen/lib"
-	thelper "loadgen/testhelper"
+	loadgenlib "github.com/Jsoneft/goc2p/src/loadgen/lib"
+	thelper "github.com/Jsoneft/goc2p/src/loadgen/testhelper"
+
 	"runtime"
 	"testing"
 	"time"

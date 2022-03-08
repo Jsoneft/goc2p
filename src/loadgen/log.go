@@ -1,7 +1,7 @@
 package loadgen
 
 import (
-	"logging"
+	"github.com/Jsoneft/goc2p/src/logging"
 )
 
 var logger logging.Logger

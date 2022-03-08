@@ -2,15 +2,16 @@
 package main
 
 import (
-	"basic/prof"
 	"bytes"
 	"errors"
 	"flag"
 	"fmt"
 	"os"
-	"pkgtool"
 	"runtime/debug"
 	"strings"
+
+	"github.com/Jsoneft/goc2p/src/basic/prof"
+	"github.com/Jsoneft/goc2p/src/pkgtool"
 )
 
 const (

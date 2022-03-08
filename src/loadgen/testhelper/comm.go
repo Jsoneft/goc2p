@@ -5,10 +5,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	loadgenlib "loadgen/lib"
 	"math/rand"
 	"net"
 	"time"
+
+	loadgenlib "github.com/Jsoneft/goc2p/src/loadgen/lib"
 )
 
 const (

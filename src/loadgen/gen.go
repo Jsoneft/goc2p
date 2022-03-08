@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	lib "loadgen/lib"
 	"math"
 	"time"
+
+	lib "github.com/Jsoneft/goc2p/src/loadgen/lib"
 )
 
 // 载荷发生器的实现。
@@ -30,7 +31,8 @@ func NewGenerator(
 	timeoutNs time.Duration,
 	lps uint32,
 	durationNs time.Duration,
-	resultCh chan *lib.CallResult) (lib.Generator, error) {
+	resultCh chan *lib.CallResult,
+) (lib.Generator, error) {
 	logger.Infoln("New a load generator...")
 	logger.Infoln("Checking the parameters...")
 	var errMsg string
@@ -74,7 +76,7 @@ func NewGenerator(
 func (gen *myGenerator) init() error {
 	logger.Infoln("Initializing the load generator...")
 	// 载荷的并发量 ≈ 载荷的响应超时时间 / 载荷的发送间隔时间
-	var total64 int64 = int64(gen.timeoutNs)/int64(1e9/gen.lps) + 1
+	var total64 = int64(gen.timeoutNs)/int64(1e9/gen.lps) + 1
 	if total64 > math.MaxInt32 {
 		total64 = math.MaxInt32
 	}
@@ -117,7 +119,7 @@ func (gen *myGenerator) asyncCall() {
 	go func() {
 		defer func() {
 			if p := recover(); p != nil {
-				err, ok := interface{}(p).(error)
+				err, ok := p.(error)
 				var buff bytes.Buffer
 				buff.WriteString("Async Call Panic! (")
 				if ok {
@@ -133,7 +135,8 @@ func (gen *myGenerator) asyncCall() {
 				result := &lib.CallResult{
 					Id:   -1,
 					Code: lib.RESULT_CODE_FATAL_CALL,
-					Msg:  errMsg}
+					Msg:  errMsg,
+				}
 				gen.sendResult(result)
 			}
 		}()
