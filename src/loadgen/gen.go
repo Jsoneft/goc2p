@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	lib "loadgen/lib"
+	lib "github.com/Jsoneft/goc2p/src/loadgen/lib"
 	"math"
 	"time"
 )
