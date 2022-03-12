@@ -28,7 +28,7 @@ type DataFile interface {
 type myDataFile struct {
 	f       *os.File     // 文件。
 	fmutex  sync.RWMutex // 被用于文件的读写锁。
-	rcond   *sync.Cond   //读操作需要用到的条件变量
+	rcond   *sync.Cond   // 读操作需要用到的条件变量
 	woffset int64        // 写操作需要用到的偏移量。
 	roffset int64        // 读操作需要用到的偏移量。
 	wmutex  sync.Mutex   // 写操作需要用到的互斥锁。

@@ -9,6 +9,7 @@ import (
 	"runtime/pprof"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -70,4 +71,9 @@ func makeRequest(done chan struct{}, c *http.Client, page string, i int64) {
 
 	time.Sleep(time.Duration(10+rand.Intn(40)) + time.Millisecond)
 
+}
+
+func main() {
+	lock := sync.RWMutex{}
+	lock.RLock()
 }

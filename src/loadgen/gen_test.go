@@ -1,12 +1,12 @@
 package loadgen
 
 import (
-	loadgenlib "github.com/Jsoneft/goc2p/src/loadgen/lib"
-	thelper "github.com/Jsoneft/goc2p/src/loadgen/testhelper"
-
 	"runtime"
 	"testing"
 	"time"
+
+	loadgenlib "github.com/Jsoneft/goc2p/src/loadgen/lib"
+	thelper "github.com/Jsoneft/goc2p/src/loadgen/testhelper"
 )
 
 var printDetail = false
