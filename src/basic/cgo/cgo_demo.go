@@ -1,8 +1,9 @@
 package main
 
 import (
-	cgolib "basic/cgo/lib"
 	"fmt"
+
+	cgolib "github.com/Jsoneft/goc2p/src/basic/cgo/lib"
 )
 
 func main() {
