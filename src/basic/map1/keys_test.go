@@ -179,7 +179,7 @@ func TestStringKeys(t *testing.T) {
 						return 0
 					}
 				},
-				reflect.TypeOf(string(1)))
+				reflect.TypeOf(string(rune(1))))
 		},
 		func() interface{} { return genRandString() },
 		reflect.String)
@@ -190,7 +190,7 @@ func genRandString() string {
 	var prev string
 	var curr string
 	for i := 0; buff.Len() < 3; i++ {
-		curr = string(genRandAZAscii())
+		curr = string(rune(genRandAZAscii()))
 		if curr == prev {
 			continue
 		}

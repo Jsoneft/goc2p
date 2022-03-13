@@ -289,9 +289,9 @@ func TestStringOmap(t *testing.T) {
 				return 0
 			}
 		},
-		reflect.TypeOf(string(1)))
+		reflect.TypeOf(string(rune(1))))
 	newOmap := func() OrderedMap {
-		return NewOrderedMap(keys, reflect.TypeOf(string(1)))
+		return NewOrderedMap(keys, reflect.TypeOf(string(rune(1))))
 	}
 	testOrderedMap(
 		t,

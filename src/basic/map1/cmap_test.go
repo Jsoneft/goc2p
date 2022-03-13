@@ -200,7 +200,7 @@ func TestFloat64Cmap(t *testing.T) {
 
 func TestStringCmap(t *testing.T) {
 	newCmap := func() ConcurrentMap {
-		keyType := reflect.TypeOf(string(2))
+		keyType := reflect.TypeOf(string(rune(2)))
 		elemType := keyType
 		return NewConcurrentMap(keyType, elemType)
 	}

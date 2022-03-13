@@ -24,16 +24,6 @@ func (cmap *myConcurrentMap) Get(key interface{}) interface{} {
 	return cmap.m[key]
 }
 
-func (cmap *myConcurrentMap) isAcceptablePair(k, e interface{}) bool {
-	if k == nil || reflect.TypeOf(k) != cmap.keyType {
-		return false
-	}
-	if e == nil || reflect.TypeOf(e) != cmap.elemType {
-		return false
-	}
-	return true
-}
-
 func (cmap *myConcurrentMap) Put(key interface{}, elem interface{}) (interface{}, bool) {
 	if !cmap.isAcceptablePair(key, elem) {
 		return nil, false
@@ -142,5 +132,16 @@ func NewConcurrentMap(keyType, elemType reflect.Type) ConcurrentMap {
 	return &myConcurrentMap{
 		keyType:  keyType,
 		elemType: elemType,
-		m:        make(map[interface{}]interface{})}
+		m:        make(map[interface{}]interface{}),
+	}
+}
+
+func (cmap *myConcurrentMap) isAcceptablePair(k, e interface{}) bool {
+	if k == nil || reflect.TypeOf(k) != cmap.keyType {
+		return false
+	}
+	if e == nil || reflect.TypeOf(e) != cmap.elemType {
+		return false
+	}
+	return true
 }
