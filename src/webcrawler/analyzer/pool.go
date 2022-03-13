@@ -4,7 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
-	mdw "webcrawler/middleware"
+
+	mdw "github.com/Jsoneft/goc2p/src/webcrawler/middleware"
 )
 
 // 生成分析器的函数类型。

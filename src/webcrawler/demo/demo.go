@@ -3,18 +3,19 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"io"
-	"logging"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
-	"webcrawler/analyzer"
-	base "webcrawler/base"
-	pipeline "webcrawler/itempipeline"
-	sched "webcrawler/scheduler"
-	"webcrawler/tool"
+
+	"github.com/Jsoneft/goc2p/src/logging"
+	"github.com/Jsoneft/goc2p/src/webcrawler/analyzer"
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
+	pipeline "github.com/Jsoneft/goc2p/src/webcrawler/itempipeline"
+	sched "github.com/Jsoneft/goc2p/src/webcrawler/scheduler"
+	"github.com/Jsoneft/goc2p/src/webcrawler/tool"
+	"github.com/PuerkitoBio/goquery"
 )
 
 // 日志记录器。

@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"runtime"
 	"time"
-	sched "webcrawler/scheduler"
+
+	sched "github.com/Jsoneft/goc2p/src/webcrawler/scheduler"
 )
 
 // 摘要信息的模板。

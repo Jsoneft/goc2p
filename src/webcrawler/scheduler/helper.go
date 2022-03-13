@@ -5,11 +5,12 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
-	anlz "webcrawler/analyzer"
-	base "webcrawler/base"
-	dl "webcrawler/downloader"
-	ipl "webcrawler/itempipeline"
-	mdw "webcrawler/middleware"
+
+	anlz "github.com/Jsoneft/goc2p/src/webcrawler/analyzer"
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
+	dl "github.com/Jsoneft/goc2p/src/webcrawler/downloader"
+	ipl "github.com/Jsoneft/goc2p/src/webcrawler/itempipeline"
+	mdw "github.com/Jsoneft/goc2p/src/webcrawler/middleware"
 )
 
 func generateChannelManager(channelArgs base.ChannelArgs) mdw.ChannelManager {

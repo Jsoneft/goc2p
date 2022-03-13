@@ -3,7 +3,8 @@ package scheduler
 import (
 	"fmt"
 	"sync"
-	base "webcrawler/base"
+
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
 )
 
 // 状态字典。

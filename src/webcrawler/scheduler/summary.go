@@ -3,7 +3,8 @@ package scheduler
 import (
 	"bytes"
 	"fmt"
-	base "webcrawler/base"
+
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
 )
 
 // 调度器摘要信息的接口类型。

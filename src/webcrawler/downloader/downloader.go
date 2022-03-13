@@ -1,10 +1,11 @@
 package downloader
 
 import (
-	"logging"
 	"net/http"
-	base "webcrawler/base"
-	mdw "webcrawler/middleware"
+
+	"github.com/Jsoneft/goc2p/src/logging"
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
+	mdw "github.com/Jsoneft/goc2p/src/webcrawler/middleware"
 )
 
 // 日志记录器。

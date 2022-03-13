@@ -4,7 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"sync"
-	base "webcrawler/base"
+
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
 )
 
 // 被用来表示通道管理器的状态的类型。

@@ -4,7 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"sync/atomic"
-	base "webcrawler/base"
+
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
 )
 
 // 条目处理管道的接口类型。

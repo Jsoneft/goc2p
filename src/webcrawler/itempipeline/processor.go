@@ -1,7 +1,7 @@
 package itemproc
 
 import (
-	base "webcrawler/base"
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
 )
 
 // 被用来处理条目的函数类型。

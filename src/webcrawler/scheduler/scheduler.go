@@ -3,16 +3,17 @@ package scheduler
 import (
 	"errors"
 	"fmt"
-	"logging"
 	"net/http"
 	"strings"
 	"sync/atomic"
 	"time"
-	anlz "webcrawler/analyzer"
-	base "webcrawler/base"
-	dl "webcrawler/downloader"
-	ipl "webcrawler/itempipeline"
-	mdw "webcrawler/middleware"
+
+	"github.com/Jsoneft/goc2p/src/logging"
+	anlz "github.com/Jsoneft/goc2p/src/webcrawler/analyzer"
+	base "github.com/Jsoneft/goc2p/src/webcrawler/base"
+	dl "github.com/Jsoneft/goc2p/src/webcrawler/downloader"
+	ipl "github.com/Jsoneft/goc2p/src/webcrawler/itempipeline"
+	mdw "github.com/Jsoneft/goc2p/src/webcrawler/middleware"
 )
 
 // 组件的统一代号。
